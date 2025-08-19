@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Engine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: white;
+        }
+        .quote-box {
+            margin: 20px 0;
+            padding: 20px;
+            border-left: 4px solid white;
+            font-style: italic;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quote Engine</h1>
+        <div class="quote-box">
+            <p id="quote">Honesty is the Best Policy</p>
+        </div>
+    </div>
+    <script>
+        const quotes = [
+            "The best way to predict the future is to create it. Peter Drucker",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. Winston Churchill",
+            "The only way to do great work is to love what you do. Steve Jobs",
+            "Don't watch the clock; do what it does. Keep going. Sam Levenson",
+            "It does not matter how slowly you go, as long as you do not stop. Confucius",
+            "Opportunities don't happen, you create them. Chris Grosser",
+            "You miss 100% of the shots you don't take. Wayne Gretzky",
+            "In the middle of every difficulty lies opportunity. Albert Einstein",
+            "What lies behind us and what lies before us are tiny matters compared to what lies within us. Ralph Waldo Emerson",
+            "The harder you work for something, the greater you'll feel when you achieve it. - Anonymous",
+            "Dream big and dare to fail. Norman Vaughan",
+            "Success is not how high you have climbed, but how you make a positive difference to the world. Roy T. Bennett",
+            "Don't let yesterday take up too much of today. Will Rogers",
+            "The future belongs to those who believe in the beauty of their dreams. Eleanor Roosevelt",
+            "It always seems impossible until it's done. Nelson Mandela",
+            "The way to get started is to quit talking and begin doing. Walt Disney",
+            "Success usually comes to those who are too busy to be looking for it. Henry David Thoreau",
+            "It's not whether you get knocked down, it's whether you get up. Vince Lombardi",
+            "Your time is limited, so don't waste it living someone else's life. Steve Jobs",
+            "Everything you've ever wanted is on the other side of fear. George Addair",
+            "We are what we repeatedly do. Excellence, then, is not an act, but a habit. Aristotle",
+            "The man who moves a mountain begins by carrying away small stones. Confucius",
+            "He who opens a school door, closes a prison. Victor Hugo",
+            "The most courageous act is still to think for yourself. Aloud. Coco Chanel",
+            "Every man takes the limits of his own field of vision for the limits of the world. Arthur Schopenhauer"
+        ];
+
+        const hexColors = [
+            "#FF5733", "#33FF57", "#3357FF", "#F1C40F", "#8E44AD", "#9B59B6",
+            "#AEC6CF", "#FFDAB9", "#E6E6FA", "#FFFACD", "#FFB6C1",
+            "#1ABC9C", "#E74C3C", "#2ECC71", "#3498DB",
+            "#D8BFD8", "#F08080", "#B0E0E6", "#C1FFC1", "#F5DEB3",
+            "#34495E", "#164085", "#27AE60", "#2980B9",
+            "#E0FFFF", "#FADADD", "#D5E8D4", "#E3F9FD", "#FBE8EB",
+            "#C0392B", "#BDC3C7", "#7F8C8D", "#FF6F61", "#D35400", "#6B5B95",
+            "#88B04B", "#F7CAC9", "#92A8D1", "#955251", "#B565A7",
+            "#F8B195", "#C2DFFF", "#E0BBE4", "#FFDFD3",
+            "#F5F5DC", "#FFE4E1", "#D3FFCE", "#FFECB3", "#D7ECD9", "#BFD8B8",
+            "#009B77", "#DD4124", "#45B8AC", "#EFC050", "#5B5EA6",
+            "#FDFD96", "#C6E2FF", "#FFDEAD", "#E6E6FA", "#F0FFF0"
+        ];
+
+        function generateQuote() {
+            const text = document.getElementById("quote");
+            const index = Math.floor(Math.random() * quotes.length);
+            text.textContent = quotes[index];
+        }
+
+        function changeColor() {
+            const element = document.getElementsByClassName('container')[0];
+            const idx = Math.floor(Math.random() * hexColors.length);
+            element.style.backgroundColor = hexColors[idx];
+        }
+
+        setInterval(generateQuote, 2000);
+        setInterval(changeColor, 2000);
+    </script>
+</body>
+</html>
